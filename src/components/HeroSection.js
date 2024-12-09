@@ -20,7 +20,7 @@ const HeroWrapper = styled.section`
   align-items: center;
   padding: 0 40px; /* Espaçamento interno nas laterais */
   margin-top: 120px;
-  background: rgba(0, 0, 0, 0.8); /* Fundo escuro semi-transparente */
+  background: rgba(0, 0, 0); /* Fundo escuro semi-transparente */
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
   overflow: hidden; /* Evita conteúdo fora do limite */
 `;
@@ -47,7 +47,6 @@ const TitleWrapper = styled.div`
 const SlideWrapper = styled.div`
   flex: 2; /* Ocupa 2 partes do espaço disponível */
   height: 100%;
-  border-radius: 15px;
   overflow: hidden;
 
   .swiper {
@@ -59,7 +58,6 @@ const SlideWrapper = styled.div`
     width: 100%;
     height: 100%;
     object-fit: cover; /* Garante que o vídeo preencha o espaço */
-    border-radius: 15px; /* Bordas arredondadas */
   }
 `;
 
@@ -68,7 +66,9 @@ function HeroSection() {
     <HeroWrapper>
       <TitleWrapper>
         <h1>Quem é você no País do Marketing?</h1>
-        <p>Descubra agora qual personagem representa sua jornada!</p>
+        <p>Descubra agora qual personagem representa sua jornada!
+        <span className="arrow"> ➔</span>
+        </p>
       </TitleWrapper>
       <SlideWrapper>
         <Swiper
