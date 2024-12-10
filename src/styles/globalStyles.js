@@ -10,14 +10,50 @@ const GlobalStyles = createGlobalStyle`
     overflow-x: hidden;
   }
 
-  h1, h2, h3, h4, h5, h6 {
-    font-family: 'Neue Konstant Grotesk', sans-serif;
+  h1 {
+  font-family: 'Neue Konstant Grotesk', sans-serif;
+  font-size: 2.5rem; /* Desktop */
+  line-height: 1.2;
+  margin: 0;
+
+  @media (max-width: 768px) {
+    font-size: 1.8rem; /* Reduz tamanho no mobile */
+  }
+}
+
+section {
+  padding: 40px 20px;
+  margin: 0 auto;
+
+  @media (max-width: 768px) {
+    padding: 20px 10px;
+  }
+}
+
+
+  /* Responsividade */
+  @media (max-width: 768px) {
+    body {
+      font-size: 90%; /* Reduz o tamanho base da fonte */
+    }
+
+    h1 {
+      font-size: 1.8rem; /* Ajusta o tamanho do título */
+    }
+
+    section {
+      padding: 20px 10px; /* Reduz o espaçamento nas seções */
+    }
   }
 
-  section {
-    background: rgba(255, 255, 255, 0.85); /* Fundo branco semi-transparente */
-    padding: 40px 20px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra leve */
+  @media (max-width: 480px) {
+    h1 {
+      font-size: 1.5rem;
+    }
+
+    section {
+      padding: 10px 5px;
+    }
   }
 `;
 

@@ -13,24 +13,23 @@ import Partner5 from '../assets/RE7-LOGO-fundo-incolor-10.png';
 
 // Swiper estilos personalizados
 const CarouselWrapper = styled.section`
-  padding: 40px 0;
+  
+  width: 100%; /* Garante largura total */
+  padding: 40px 20;
   background-color: #f5f5f5;
 
   .swiper {
     width: 100%;
-    height: 100%;
   }
 
   .swiper-slide {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 10px;
 
     img {
       max-width: 150px;
       height: auto;
-      object-fit: contain;
     }
   }
   /* Fundo escuro semi-transparente */

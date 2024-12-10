@@ -14,38 +14,54 @@ import Video4 from '../assets/RAINHA.mp4';
 
 const HeroWrapper = styled.section`
   height: 85vh;
-  display: flex; /* Configura layout em colunas */
+  display: flex;
   flex-direction: row; /* Organiza os itens em linha */
   justify-content: space-between;
   align-items: center;
-  padding: 0 40px; /* Espaçamento interno nas laterais */
+  padding: 0 40px;
   margin-top: 120px;
-  background: rgba(0, 0, 0); /* Fundo escuro semi-transparente */
+  background: rgba(0, 0, 0); /* Fundo escuro */
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
-  overflow: hidden; /* Evita conteúdo fora do limite */
+  overflow: hidden;
+
+  @media (max-width: 768px) {
+    flex-direction: column; /* Empilha os itens no mobile */
+    padding: 20px;
+    height: auto; /* Ajusta altura no mobile */
+  }
 `;
 
 const TitleWrapper = styled.div`
-  flex: 1; /* Ocupa 1 parte do espaço disponível */
-  max-width: 400px; /* Largura máxima da coluna */
-  text-align: left; /* Alinha o texto à esquerda */
+  flex: 1;
+  max-width: 400px;
+  text-align: left;
 
   h1 {
     font-size: 4.5rem;
     margin: 0 0 20px 0;
     color: white;
     font-weight: 700;
+
+    @media (max-width: 768px) {
+      font-size: 3rem; /* Reduz tamanho no mobile */
+      text-align: center; /* Centraliza no mobile */
+    }
   }
 
   p {
     font-size: 1.2rem;
     color: white;
     font-weight: 500;
+
+    @media (max-width: 768px) {
+      font-size: 1rem; /* Reduz tamanho no mobile */
+      text-align: center; /* Centraliza no mobile */
+    }
   }
 `;
 
 const SlideWrapper = styled.div`
-  flex: 2; /* Ocupa 2 partes do espaço disponível */
+  flex: 2;
   height: 100%;
   overflow: hidden;
 
@@ -57,7 +73,16 @@ const SlideWrapper = styled.div`
   video {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Garante que o vídeo preencha o espaço */
+    object-fit: cover;
+
+    @media (max-width: 768px) {
+      height: auto; /* Ajusta altura no mobile */
+    }
+  }
+
+  @media (max-width: 768px) {
+    width: 100%; /* Ocupa toda a largura no mobile */
+    margin-top: 20px; /* Espaçamento entre título e vídeos */
   }
 `;
 
@@ -66,8 +91,9 @@ function HeroSection() {
     <HeroWrapper>
       <TitleWrapper>
         <h1>Quem é você no País do Marketing?</h1>
-        <p>Descubra agora qual personagem representa sua jornada!
-        <span className="arrow"> ➔</span>
+        <p>
+          Descubra agora qual personagem representa sua jornada!
+          <span className="arrow"> ➔</span>
         </p>
       </TitleWrapper>
       <SlideWrapper>
